@@ -110,19 +110,6 @@ export default function Home() {
           </Col>
         </Row>
         {/***Blog Cards***/}
-        <Row>
-          {BlogData.map((blg) => (
-            <Col sm="6" lg="6" xl="3" key={blg.title}>
-              <Blog
-                image={blg.image}
-                title={blg.title}
-                subtitle={blg.subtitle}
-                text={blg.description}
-                color={blg.btnbg}
-              />
-            </Col>
-          ))}
-        </Row>
       </div>
     </div>
   );
