@@ -1,14 +1,10 @@
-import LogoDark from "../../assets/images/logos/logopertamina2.svg";
-import Image from "next/image";
 import Link from "next/link";
 
-const Logo = () => {
+const Logo = (props) => {
   return (
-    <Link href="/">
-      <a>
-        <Image src={LogoDark} alt="logo" />
-      </a>
-    </Link>
+    <span className={`text-center text-decoration-none ${props.textColor} text-uppercase fs-2 fw-bold`}>
+      Salon Stikom
+    </span>
   );
 };
 

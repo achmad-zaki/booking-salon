@@ -2,26 +2,27 @@ import { Button, Nav, NavItem } from "reactstrap";
 import Logo from "../../logo/Logo";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { FiPackage } from "react-icons/fi"
 
 const navigation = [
   {
     title: "Dashboard",
-    href: "/admin/dashboard",
+    href: "/user/dashboard",
     icon: "bi bi-speedometer2",
   },
   {
-    title: "Pegawai",
-    href: "/admin/datapegawai",
-    icon: "bi bi-person-fill",
+    title: "Booking",
+    href: "/user/booking",
+    icon: "bi bi-calendar-check",
   },
   {
     title: "Paket Treatment",
-    href: "/admin/pakettreatment",
+    href: "/user/pakettreatment",
     icon: "bi bi-box",
   }
 ];
 
-const Sidebar = ({ showMobilemenu }) => {
+const SidebarUser = ({ showMobilemenu }) => {
   let curl = useRouter();
   const location = curl.pathname;
 
@@ -60,4 +61,4 @@ const Sidebar = ({ showMobilemenu }) => {
   );
 };
 
-export default Sidebar;
+export default SidebarUser;

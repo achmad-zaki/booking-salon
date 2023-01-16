@@ -14,8 +14,8 @@ import {
   Dropdown,
   Button,
 } from "reactstrap";
-import LogoWhite from "../../assets/images/logos/logopertamina2.svg";
 import user1 from "../../assets/images/users/user1.jpg";
+import Logo from "../logo/Logo";
 
 const Header = ({ showMobmenu }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -27,11 +27,9 @@ const Header = ({ showMobmenu }) => {
   };
 
   return (
-    <Navbar color="primary" dark expand="md">
+    <Navbar color="success" dark expand="md">
       <div className="d-flex align-items-center">
-        <NavbarBrand href="/" className="d-lg-none">
-          <Image src={LogoWhite} alt="logo" />
-        </NavbarBrand>
+        <Logo textColor="text-white d-lg-none"/>
         <Button color="primary" className="d-lg-none" onClick={showMobmenu}>
           <i className="bi bi-list"></i>
         </Button>
@@ -58,25 +56,9 @@ const Header = ({ showMobmenu }) => {
               <a className="nav-link">Starter</a>
             </Link>
           </NavItem>
-          <NavItem>
-            <Link href="/about">
-              <a className="nav-link">About</a>
-            </Link>
-          </NavItem>
-          <UncontrolledDropdown inNavbar nav>
-            <DropdownToggle caret nav>
-              DD Menu
-            </DropdownToggle>
-            <DropdownMenu end>
-              <DropdownItem>Option 1</DropdownItem>
-              <DropdownItem>Option 2</DropdownItem>
-              <DropdownItem divider />
-              <DropdownItem>Reset</DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
         </Nav>
         <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-          <DropdownToggle color="primary">
+          <DropdownToggle color="success">
             <div style={{ lineHeight: "0px" }}>
               <Image
                 src={user1}
@@ -88,13 +70,13 @@ const Header = ({ showMobmenu }) => {
             </div>
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem header>Info</DropdownItem>
-            <DropdownItem>My Account</DropdownItem>
-            <DropdownItem>Edit Profile</DropdownItem>
-            <DropdownItem divider />
-            <DropdownItem>My Balance</DropdownItem>
-            <DropdownItem>Inbox</DropdownItem>
-            <DropdownItem>Logout</DropdownItem>
+            <DropdownItem>
+              <Link href='/'>
+                <div className="text-decoration-none">
+                  Logout
+                </div>
+              </Link>
+            </DropdownItem>
           </DropdownMenu>
         </Dropdown>
       </Collapse>
